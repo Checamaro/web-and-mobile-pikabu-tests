@@ -16,7 +16,7 @@ import pytest
 def test_clicking_logo():
     main_page.open()
     main_page.click_community_section()
-    main_page.check_community_section(data_section.community)
+    main_page.check_community_section(data_section)
     main_page.clicking_logo()
-    main_page.check_return_to_main(data_section.hot)
+    main_page.check_return_to_main(data_section)
 
