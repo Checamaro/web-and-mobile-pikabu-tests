@@ -1,109 +1,174 @@
-<h1>Tests for automated testing of the <i>rabota.by</i> website</h1>
+# Фреймворк для автоматизации тестирования сайта и мобильного приложения "Онлайн кинотеатр Ivi"
+> <a target="_blank" href="https://www.ivi.ru/">ivi.ru</a>
 
----
+![main page screenshot](/ivi_ui_and_mobile_test_framework/pictures/base_page_web.jpg)
 
-<p align="center">
-    <img width="600" height="300" src="resources/main-page.png">
-</p>
+----
 
-<h2><img width="40" align="center" src="resources/description.png"> Description</h2>
-<li><a href="#tools">Tools</a></li>
-<li><a href="#tests">Tests</a></li>
-<li><a href="#run-tests">Run tests</a></li>
-<li><a href="#test-example">Example of passing test</a></li>
-<li><a href="#telegram-notification">Telegram notifications</a></li>
+### Особенности проекта
 
----
+* Оповещения о тестовых прогонах в Telegram
+* Отчеты с видео, скриншотом, логами, исходной моделью разметки страницы
+* Сборка проекта в Jenkins
+* Отчеты Allure Report
+* Интеграция с Allure TestOps
+* Автоматизация отчетности о тестовых прогонах и тест-кейсах в Jira
+* Запуск web/UI автотестов в Selenoid
+* Запуск mobile автотестов в BrowserStack
+* Для запуска mobile автотестов используется Appium
 
-<h2 id="tools"><img width="40" align="center" src="resources/tools.png"> Tools</h2>
-<div align="center">
-    <img title="Pytest" width="40" src="resources/pytest.png">
-    <img title="Python" width="40" src="resources/python.png">
-    <img title="Selenium" width="40" src="resources/selenium.png">
-    <img title="Selene" width="40" src="resources/selene.png">
-    <img title="PyCharm" width="40" src="resources/pycharm.png">
-    <img title="Jenkins" width="40" height="40" src="resources/jenkins.png">
-    <img title="Selenoid" width="40" src="resources/selenoid.png">
-    <img title="Allure" width="40" src="resources/allure.png">
-    <img title="Github" width="40" src="resources/github.png">
-    <img title="Appium" width="40" src="resources/appium.png">
-    <img title="Pydantic" width="40" src="resources/pydantic.png">
-</div>
-<p>Autotests are written in <b>Python</b> using <b>Selenide</b> for <i>UI tests</i>, <b>Browserstack</b>, <b>emulator or real device</b> for <i>mobile tests</i></p>
-<p>Tests are run from <b>Jenkins</b></p>
-<p><b>Selenoid and Browserstack</b> are used to launch the browser</p>
-<p><b>Allure report</b> is generated and sent to telegram</p>
+### Список проверок, реализованных в web/UI автотестах
 
----
+- [x] Главная страница сайта отображается
+- [x] Страница фильма отображается
+- [x] Промо страница отображается
+- [x] Найти фильм в поиске возможно
+- [x] Раздел "Что нового" отображается
+- [x] Открыть страницу "Фильмы" через верхнее меню возможно
+- [x] Открыть страницу "Сериалы" через верхнее меню возможно
+- [x] Открыть страницу "Мультфильмы" через верхнее меню возможно
 
-<h2 id="tests"><img width="40" align="center" src="resources/tests.png"> Tests</h2>
+### Список проверок, реализованных в mobile автотестах
 
-<p><b>UI tests:</b></p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Successfully login</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Unsuccessfully login</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Search company</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Advanced search</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Open resume page</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Save search without registering</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Choose city</p>
-<p><b>API tests:</b></p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Login with correct data</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Login with incorrect data</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Search vacancy</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Add vacancy to favorite without registered</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Enter phone number for get otp</p>
-<p><b>Mobile tests:</b></p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> Login page</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> New user page</p>
-<p><img width="20" align="center" src="resources/checkbox.png" alt="checkbox"> User profile</p>
----
+- [x] Элементы управления отображаются
+- [x] Раздел "Сериалы" отображается
+- [x] Раздел "Профиль" отображается
 
-<h2 id="run-tests"><img width="40" align="center" src="resources/run-tests.png" alt="run"> Run tests</h2>
-<p><b>For web tests:</b></p>
-<pre>
-    pytest tests/web
-</pre>
-<p><b>For API tests:</b></p>
-<pre>
-    pytest tests/api
-</pre>
-<p><b>For mobile tests on emulator:</b></p>
-<pre>
-    pytest tests/mobile --context=local_emulator
-</pre>
-<p><b>For mobile tests on real device:</b></p>
-<pre>
-    pytest tests/mobile --context=real_local
-</pre>
-<p><b>For mobile tests on bstack:</b></p>
-<pre>
-    pytest tests/mobile --context=bstack
-</pre>
+----
+
+### Используемый стэк
+
+<img title="Python" src="ivi_ui_and_mobile_test_framework/pictures/icons/python-original.svg" height="40" width="40"/> <img title="Pytest" src="ivi_ui_and_mobile_test_framework/pictures/icons/pytest-original.svg" height="40" width="40"/> <img title="Jira" src="ivi_ui_and_mobile_test_framework/pictures/icons/jira-original.svg" height="40" width="40"/> <img title="Allure Report" src="ivi_ui_and_mobile_test_framework/pictures/icons/Allure_Report.png" height="40" width="40"/> <img title="Allure TestOps" src="ivi_ui_and_mobile_test_framework/pictures/icons/AllureTestOps.png" height="40" width="40"/> <img title="GitHub" src="ivi_ui_and_mobile_test_framework/pictures/icons/github-original.svg" height="40" width="40"/> <img title="Selenoid" src="ivi_ui_and_mobile_test_framework/pictures/icons/selenoid.png" height="40" width="40"/> <img title="Selenium" src="ivi_ui_and_mobile_test_framework/pictures/icons/selenium-original.svg" height="40" width="40"/> <img title="Selene" src="ivi_ui_and_mobile_test_framework/pictures/icons/selene.png" height="40" width="40"/> <img title="Pycharm" src="ivi_ui_and_mobile_test_framework/pictures/icons/pycharm.png" height="40" width="40"/> <img title="Telegram" src="ivi_ui_and_mobile_test_framework/pictures/icons/tg.png" height="40" width="40"/> <img title="Jenkins" src="ivi_ui_and_mobile_test_framework/pictures/icons/jenkins-original.svg" height="40" width="40"/> <img title="Appium" src="ivi_ui_and_mobile_test_framework/pictures/icons/appium.svg" height="40" width="40"/> <img title="BrowserStack" src="ivi_ui_and_mobile_test_framework/pictures/icons/browserstack.svg" height="40" width="40"/>
+
+----
+
+### Локальный запуск автотестов
+
+#### Для запуска web/UI автотестов выполнить в cli:
+> [!NOTE]
+> Ключ выбора версии `--browser-version` не обязателен
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pytest --browser-version=100 ./tests/web/
+```
+
+#### Для запуска mobile автотестов выполнить в cli:
+> [!NOTE]
+> Ключ `--context` не обязателен, по умолчанию тесты будут запущены на BrowserStack
+* Для запуска на реальном устройстве указать ключ `--context=local_real_device`
+* Для запуска на виртуальном устройстве указать ключ `--context=local_real_device`
+* Для запуска на BrowserStack указать ключ `--context=bstack`
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pytest --context=bstack ./tests/mobile/
+```
+
+#### Для запуска всех автотестов выполнить в cli:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pytest -s -v
+```
+
+#### Получение отчёта:
+```bash
+allure serve build/allure-results
+```
+
+----
+
+### Проект в Jenkins
+> <a target="_blank" href="https://jenkins.autotests.cloud/job/Ivi-mobile-and-UI-Auto-Tests/">Ссылка</a>
+
+#### Параметры сборки
+> [!NOTE]
+> Параметры сборки не обязательны
+```python
+ENVIRONMENT = ['STAGE', 'PREPROD', 'PROD'] # Окружение
+COMMENT = 'some comment' # Комментарий
+```
+#### Запуск автотестов в Jenkins
+1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/Ivi-mobile-and-UI-Auto-Tests/">проект</a>
+
+![jenkins project main page](ivi_ui_and_mobile_test_framework/pictures/jenkins_project_main_page.png)
+
+2. Нажать "Build with Parameters"
+3. Из списка "ENVIRONMENT" выбрать любое окружение
+4. В поле "COMMENT" ввести комментарий
+5. Нажать "Build"
+
+![jenkins_build](ivi_ui_and_mobile_test_framework/pictures/jenkins_build.png)
+
+----
+
+### Allure отчет
+#### <a target="_blank" href="https://jenkins.autotests.cloud/job/Ivi-mobile-and-UI-Auto-Tests/15/allure/">Общие результаты</a>
+![allure_report_overview](ivi_ui_and_mobile_test_framework/pictures/allure_report_overview.png)
+
+#### <a target="_blank" href="https://jenkins.autotests.cloud/job/Ivi-mobile-and-UI-Auto-Tests/15/allure/#suites">Результаты прохождения теста</a>
+
+![allure_reports_behaviors](ivi_ui_and_mobile_test_framework/pictures/allure_reports_suites.png)
+
+#### <a target="_blank" href="https://jenkins.autotests.cloud/job/Ivi-mobile-and-UI-Auto-Tests/15/allure/#graph">Графики</a>
 
 
----
+![allure_reports_graphs](ivi_ui_and_mobile_test_framework/pictures/alluere_reports_graphs_1.png)
+![allure_reports_graphs](ivi_ui_and_mobile_test_framework/pictures/alluere_reports_graphs_2.png)
 
-<p>To run tests in Jenkins you need to click on <b>Build with Parameters</b> button</p>
-<img src="resources/build.png" alt="build">
-<p>Сhoose parameters (<i>BROWSER_VERSION, ENVIRONMENT, COMMENT</i>) and click on <b>"Build"</b> button</p>
-<img src="resources/parameters.png" alt="parameters">
-<p>After passing the tests report will be generated, you can see it by clicking on the <b>Allure report</b> and <b>Allure TestOps</b></p>
-<p><a href="https://allure.autotests.cloud/project/4261/dashboards">TestOps</a></p>
-<img src="resources/allure-report.png" alt="allure-report">
-<img src="resources/allure-result.png" alt="allure-result">
-<img src="resources/testOps.png" alt="allure-testOps">
-<img src="resources/testOps-tests.png" alt="allure-testOps-tests">
+----
 
-<p>Project in Jira</p>
-<img src="resources/jira.png" alt="jira">
+### Интеграция с Allure TestOps
+> <a target="_blank" href="https://allure.autotests.cloud/project/3910/dashboards">Ссылка на проект</a>
 
+#### <a target="_blank" href="https://allure.autotests.cloud/project/3910/dashboards">Дашборд с общими показателями тестовых прогонов</a>
 
----
+![allure_test_ops_dashboards](ivi_ui_and_mobile_test_framework/pictures/allure_testops_dashboards.png)
 
-<h2 id="test-example"><img width="40" align="center" src="resources/example.png" alt="exapmle">Example of passing search of company test</h2>
-<img src="resources/test-example.gif" alt="test">
+#### <a target="_blank" href="https://allure.autotests.cloud/project/3910/launches">История запуска тестовых наборов</a>
 
----
+![allure_testops_launches](ivi_ui_and_mobile_test_framework/pictures/allure_testops_launches.png)
 
-<h2 id="telegram-notification"><img width="40" align="center" src="resources/notification.png" alt="exapmle">Telegram notifications</h2>
-<img src="resources/telegram.png" alt="report-telegram">
+#### <a target="_blank" href="https://allure.autotests.cloud/project/3910/test-cases/28510?treeId=0">Тест кейсы</a>
+
+![allure_testops_suites](ivi_ui_and_mobile_test_framework/pictures/allure_testops_suites.png)
+
+#### <a target="_blank" href="https://allure.autotests.cloud/launch/33573/tree/551292/attachments?treeId=0">Тестовые артефакты</a>
+
+![allure_testops_suites](ivi_ui_and_mobile_test_framework/pictures/allure_testops_test_attachments.png)
+
+#### <a target="_blank" href="https://allure.autotests.cloud/project/3910/test-cases/28510?treeId=0">Ручной запуск авто теста из Allure TestOps</a>
+
+![allure_testops_suites](ivi_ui_and_mobile_test_framework/pictures/allure_testops_manual_test_run.png)
+
+1. Нажать на чек-бокс необходимого тест кейса
+2. Нажать на "Bulk actions"
+3. Нажать на "Run"
+
+----
+
+### Интеграция с Jira
+> <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1021">Ссылка на проект</a>
+
+![jira_project](ivi_ui_and_mobile_test_framework/pictures/jira_project.png)
+
+----
+
+### Оповещения в Telegram
+![telegram_allert](ivi_ui_and_mobile_test_framework/pictures/telegram_allert.png)
+
+----
+
+### Видео прохождения web/UI автотеста
+![autotest_gif](ivi_ui_and_mobile_test_framework/pictures/autotest.gif)
+
+----
+
+### Видео прохождения mobile автотеста
+![autotest_gif](ivi_ui_and_mobile_test_framework/pictures/test_mobile_video.gif)
