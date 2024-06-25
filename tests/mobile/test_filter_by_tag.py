@@ -3,9 +3,9 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have, be
 
 
-@allure.epic('Notifications')
-@allure.story('Skip notification')
-@allure.feature('Notification')
+@allure.epic('Filter')
+@allure.story('Filter by tag')
+@allure.feature('Filter')
 @allure.tag('mobile')
 @allure.label('owner')
 @allure.severity('high')
