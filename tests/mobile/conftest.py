@@ -3,7 +3,15 @@ import pytest
 from selene import browser
 from appium import webdriver
 from pikabu.utils import attach
+from pikabu.activity import start_activity
 from dotenv import load_dotenv
+
+
+@pytest.fixture(scope='function', autouse=True)
+def handle_notifications():
+    with allure.step('Check for notification and close if present'):
+        if start_activity.check_notification():
+            start_activity.close_notification()
 
 
 def pytest_addoption(parser):
