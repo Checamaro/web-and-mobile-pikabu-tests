@@ -1,7 +1,7 @@
 # Фреймворк для автоматизации тестирования сайта и мобильного приложения "Pikabu"
 > <a target="_blank" href="https://www.pikabu.ru/">pikabu.ru</a>
 
-![main page screenshot](/web_and_mobile_tests_pikabu/pictures/base_page_web.jpg)
+![main page screenshot](pictures/base_page_mobile.png)
 
 ----
 
