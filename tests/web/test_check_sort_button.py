@@ -3,15 +3,15 @@ import allure
 import pytest
 
 
-@allure.epic('Logo')
-@allure.story('Header logo')
-@allure.feature('Logo')
+@allure.epic('Sorting')
+@allure.story('Sort by subs')
+@allure.feature('Sort')
 @allure.tag('web')
 @allure.label('owner')
 @allure.severity('normal')
 @pytest.mark.web
 @pytest.mark.regress
-@allure.title('CLick logo')
+@allure.title('CLick sort')
 def test_checking_auth_options():
     main_page.open()
     main_page.clicking_community_button()

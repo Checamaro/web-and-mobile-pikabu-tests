@@ -3,15 +3,15 @@ import allure
 import pytest
 
 
-@allure.epic('Logo')
-@allure.story('Header logo')
-@allure.feature('Logo')
+@allure.epic('Auth')
+@allure.story('Auth options')
+@allure.feature('Auth')
 @allure.tag('web')
 @allure.label('owner')
 @allure.severity('normal')
 @pytest.mark.web
 @pytest.mark.regress
-@allure.title('CLick logo')
+@allure.title('Check auth')
 def test_checking_auth_options():
     main_page.open()
     main_page.check_auth_yandex()
