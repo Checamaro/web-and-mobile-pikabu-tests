@@ -1,6 +1,5 @@
 from selene import browser, have, be
 import allure
-from selenium.webdriver.common.by import By
 
 
 class MainPage:
@@ -12,6 +11,14 @@ class MainPage:
     def clicking_community_button(self):
         with allure.step('Click community button'):
             browser.element('[id="menu-communities"]').click()
+
+    def clicking_blogs_section(self):
+        with allure.step('Click blogs section'):
+            browser.element('[data-feed-key="companies"]').click()
+
+    def check_go_to_blogs(self):
+        with allure.step('Checking go to blogs section'):
+            browser.element('.company-blogs-info__title').should(have.text('Блоги компаний'))
 
     def click_sort_button(self):
         with allure.step('Click sort button'):
