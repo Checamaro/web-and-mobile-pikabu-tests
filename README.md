@@ -12,7 +12,6 @@
 * Сборка проекта в Jenkins
 * Отчеты Allure Report
 * Интеграция с Allure TestOps
-* Автоматизация отчетности о тестовых прогонах и тест-кейсах в Jira
 * Запуск web/UI автотестов в Selenoid
 * Запуск mobile автотестов в BrowserStack
 * Для запуска mobile автотестов используется Appium
