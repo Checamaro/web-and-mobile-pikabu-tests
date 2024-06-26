@@ -39,8 +39,7 @@ class MainPage:
     def search_articles(self):
         with allure.step('Input article name and press enter'):
             browser.element('.header-right-menu__search').click()
-            if browser.element('[name="q"]').matching(be.visible):
-                browser.element('[name="q"]').type('Мемы').press_enter()
+            browser.element('[name="q"]').type('Мемы').press_enter()
 
     def check_articles(self):
         with allure.step('Check found articles'):
