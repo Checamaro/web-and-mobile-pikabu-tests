@@ -3,7 +3,7 @@ import pytest
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from pikabu.utils import attach
+from web_and_mobile_pikabu_tests.utils import attach
 from dotenv import load_dotenv
 
 DEFAULT_BROWSER_VERSION = "100.0"

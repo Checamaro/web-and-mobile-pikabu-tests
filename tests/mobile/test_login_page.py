@@ -16,21 +16,21 @@ def test_authorization_user():
 
     with allure.step('Press menu button'):
         browser.element((AppiumBy.XPATH,
-                         '//android.view.ViewGroup[@resource-id="ru.pikabu.android:id/toolbar"]/android.widget'
+                         '//android.view.ViewGroup[@resource-id="ru.web_and_mobile_pikabu_tests.android:id/toolbar"]/android.widget'
                          '.ImageButton')).click()
 
     with allure.step('Press login button'):
         browser.element((AppiumBy.ID,
-                         'ru.pikabu.android:id/iv_login')).click()
+                         'ru.web_and_mobile_pikabu_tests.android:id/iv_login')).click()
 
     with allure.step('Checking login'):
-        browser.element((AppiumBy.ID, 'ru.pikabu.android:id/login')).should(
+        browser.element((AppiumBy.ID, 'ru.web_and_mobile_pikabu_tests.android:id/login')).should(
             have.text('Логин, email или телефон'))
 
     with allure.step('Checking password'):
-        browser.element((AppiumBy.ID, 'ru.pikabu.android:id/password')).should(
+        browser.element((AppiumBy.ID, 'ru.web_and_mobile_pikabu_tests.android:id/password')).should(
             have.text('Пароль'))
 
     with allure.step('Checking Auth button'):
-        browser.element((AppiumBy.ID, 'ru.pikabu.android:id/loginBtn')).should(
+        browser.element((AppiumBy.ID, 'ru.web_and_mobile_pikabu_tests.android:id/loginBtn')).should(
             have.text('Войти'))

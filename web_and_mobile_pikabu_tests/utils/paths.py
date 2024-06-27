@@ -1,9 +1,9 @@
 def abs_path_from_project(relative_path: str):
-    import pikabu
+    import web_and_mobile_pikabu_tests
     from pathlib import Path
 
     return (
-        Path(pikabu.__file__)
+        Path(web_and_mobile_pikabu_tests.__file__)
         .parent.parent.joinpath(relative_path)
         .absolute()
         .__str__()

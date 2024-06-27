@@ -1,7 +1,7 @@
 import os
 from appium.options.android import UiAutomator2Options
 from pydantic import BaseModel
-from pikabu.utils import paths
+from web_and_mobile_pikabu_tests.utils import paths
 
 
 class Config(BaseModel):

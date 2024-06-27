@@ -1,9 +1,9 @@
-pytest
+pytest==latest
 selene>=2.0.0rc9
-allure-pytest
-python-dotenv
-requests
-pytest-dotenv
-jsonschema
-appium-python-client
-pydantic
+allure-pytest==latest
+python-dotenv==latest
+requests==latest
+pytest-dotenv==latest
+jsonschema==latest
+appium-python-client==latest
+pydantic==latest

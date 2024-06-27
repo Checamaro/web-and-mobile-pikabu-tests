@@ -1,4 +1,4 @@
-from pikabu.pages.main_page import main_page
+from web_and_mobile_pikabu_tests.pages.main_page import main_page
 import allure
 import pytest
 

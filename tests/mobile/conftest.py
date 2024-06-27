@@ -2,8 +2,8 @@ import allure
 import pytest
 from selene import browser
 from appium import webdriver
-from pikabu.utils import attach
-from pikabu.activity import start_activity
+from web_and_mobile_pikabu_tests.utils import attach
+from web_and_mobile_pikabu_tests.activity import start_activity
 from dotenv import load_dotenv
 
 
