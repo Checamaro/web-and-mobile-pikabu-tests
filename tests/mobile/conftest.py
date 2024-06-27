@@ -13,7 +13,6 @@ def handle_notifications():
         start_activity.check_notification()
 
 
-
 def pytest_addoption(parser):
     parser.addoption(
         "--context",
