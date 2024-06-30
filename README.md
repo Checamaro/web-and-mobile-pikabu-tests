@@ -144,15 +144,15 @@ COMMENT = 'comment' # Комментарий
 
 ----
 
-### Видео прохождения web/UI автотеста
-![autotest_gif](/pictures/autotest.gif)
-
-----
-
 ### Интеграция с Jira
 > <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1288">Ссылка на проект</a>
 
 ![jira_project](pictures/jira_project.png)
+----
+
+### Видео прохождения web/UI автотеста
+![autotest_gif](/pictures/autotest.gif)
+
 
 ----
 ### Видео прохождения mobile автотеста
