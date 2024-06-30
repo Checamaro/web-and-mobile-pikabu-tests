@@ -15,12 +15,12 @@ def test_filtration_by_tag():
 
     with allure.step('Press menu button'):
         browser.element((AppiumBy.XPATH,
-                         '//android.view.ViewGroup[@resource-id="ru.web_and_mobile_pikabu_tests.android:id/toolbar"]/android.widget'
+                         '//android.view.ViewGroup[@resource-id="ru.pikabu.android:id/toolbar"]/android.widget'
                          '.ImageButton')).click()
 
     with allure.step('Click tags tab'):
         browser.element((AppiumBy.XPATH, '//android.widget.CheckedTextView['
-                                         '@resource-id="ru.web_and_mobile_pikabu_tests.android:id/design_menu_item_text" and '
+                                         '@resource-id="ru.pikabu.android:id/design_menu_item_text" and '
                                          '@text="Теги"]')).click()
 
     with allure.step('Checking tags'):
@@ -28,9 +28,9 @@ def test_filtration_by_tag():
             have.text('ВСЕ ТЕГИ'))
 
     with allure.step('Filtering tags by "Юмор"'):
-        browser.element((AppiumBy.XPATH, '//android.widget.TextView[@resource-id="ru.web_and_mobile_pikabu_tests.android:id/tv_name" and '
+        browser.element((AppiumBy.XPATH, '//android.widget.TextView[@resource-id="ru.pikabu.android:id/tv_name" and '
                                          '@text="Юмор"]')).click()
 
     with allure.step('Checking search results by tag "Юмор"'):
-        browser.element((AppiumBy.ID, 'ru.web_and_mobile_pikabu_tests.android:id/tv_text')).should(
+        browser.element((AppiumBy.ID, 'ru.pikabu.android:id/tv_text')).should(
             have.text('Юмор\nЛюбые посты за все время, сортировка cвежее, рейтинг любой'))

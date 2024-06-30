@@ -15,13 +15,13 @@ def test_search_python():
 
     with allure.step('Click search button'):
         browser.element((AppiumBy.ID,
-                         'ru.web_and_mobile_pikabu_tests.android:id/action_search')).click()
+                         'ru.pikabu.android:id/action_search')).click()
 
     with allure.step('Type and click search'):
         browser.element((AppiumBy.ID,
-                         'ru.web_and_mobile_pikabu_tests.android:id/et_search')).type('python')
-        browser.element((AppiumBy.ID, 'ru.web_and_mobile_pikabu_tests.android:id/action_apply')).click()
+                         'ru.pikabu.android:id/et_search')).type('python')
+        browser.element((AppiumBy.ID, 'ru.pikabu.android:id/action_apply')).click()
 
     with allure.step('Checking search results'):
-        browser.element((AppiumBy.ID, 'ru.web_and_mobile_pikabu_tests.android:id/tv_text')).should(
+        browser.element((AppiumBy.ID, 'ru.pikabu.android:id/tv_text')).should(
             have.text('"python". Любые посты за все время, сортировка по релевантности, рейтинг любой'))
